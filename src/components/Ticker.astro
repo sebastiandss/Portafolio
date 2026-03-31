@@ -1,0 +1,51 @@
+---
+---
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="hi">✦ Bubble.io</span><span>·</span>
+      <span>Astro</span><span>·</span>
+      <span class="hi">Nuxt.js</span><span>·</span>
+      <span>Java</span><span>·</span>
+      <span class="hi">✦ Junior Dev</span><span>·</span>
+      <span>EBS</span><span>·</span>
+      <span>Medellín 🇨🇴</span><span>·</span>
+      <span class="hi">✦ Spring Boot</span><span>·</span>
+      <span>Oracle DB</span><span>·</span>
+      <span>WhatsApp API</span><span>·</span>
+    </div>
+    <div class="ticker-inner" aria-hidden="true">
+      <span class="hi">✦ Bubble.io</span><span>·</span>
+      <span>Astro</span><span>·</span>
+      <span class="hi">Nuxt.js</span><span>·</span>
+      <span>Java</span><span>·</span>
+      <span class="hi">✦ Junior Dev</span><span>·</span>
+      <span>EBS</span><span>·</span>
+      <span>Medellín 🇨🇴</span><span>·</span>
+      <span class="hi">✦ Spring Boot</span><span>·</span>
+      <span>Oracle DB</span><span>·</span>
+      <span>WhatsApp API</span><span>·</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ticker-wrap {
+    position: relative; z-index: 2;
+    border-top: 2.5px solid rgba(255,255,255,.08);
+    border-bottom: 2.5px solid rgba(255,255,255,.08);
+    padding: .8rem 0; overflow: hidden; background: var(--ink2);
+  }
+  .ticker { display: flex; gap: 0; animation: scroll 18s linear infinite; white-space: nowrap; }
+  .ticker-inner { display: flex; gap: 0; }
+  .ticker span { 
+    font-size: .72rem; font-weight: 900; letter-spacing: .15em; 
+    text-transform: uppercase; color: var(--off); padding: 0 2rem; 
+  }
+  .ticker span.hi { color: var(--yellow); }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+</style>

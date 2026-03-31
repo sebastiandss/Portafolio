@@ -1,0 +1,92 @@
+---
+---
+<nav>
+  <a href="#" class="nav-logo">seb<span>.dev</span></a>
+  
+  <ul class="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#experience">Experiencia</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li class="cv-item">
+        <a href="/PERFIL PROFESIONAL.pdf" download="CV_Sebastian_Dev.pdf" class="btn-cv">        <span>CV</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.4rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,14,14,.95) 60%, transparent);
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900;
+    color: var(--white); text-decoration: none;
+  }
+  
+  .nav-logo span {
+    display: inline-block; background: var(--yellow); color: var(--ink);
+    padding: .05rem .45rem; border-radius: 4px; border: 2.5px solid var(--ink);
+    margin-left: .2rem; transform: rotate(-2deg);
+  }
+
+  .nav-links { 
+    display: flex; 
+    gap: 1.8rem; 
+    list-style: none; 
+    align-items: center; /* Alinea verticalmente el botón con los links */
+  }
+  
+  .nav-links a:not(.btn-cv) {
+    font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--off); text-decoration: none; position: relative; transition: color .2s;
+  }
+  
+  .nav-links a:not(.btn-cv)::after {
+    content: ''; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 2.5px; background: var(--yellow);
+    transition: width .25s; border-radius: 2px;
+  }
+  
+  .nav-links a:not(.btn-cv):hover { color: var(--white); }
+  .nav-links a:not(.btn-cv):hover::after { width: 100%; }
+
+  /* ESTILO BOTÓN CV */
+  .cv-item {
+    margin-left: 0.5rem; 
+    transform: translateY(-1.5px); /* ESTO LO SUBE SOLO UN POQUITO */
+  }
+
+  .btn-cv {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink3);
+    color: var(--yellow); 
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 900;
+    padding: 0.4rem 0.8rem; /* Reduje un poco el padding vertical para que se vea más compacto */
+    border-radius: 6px;
+    border: 2px solid var(--yellow);
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn-cv:hover {
+    background: var(--yellow);
+    color: var(--ink);
+    transform: translate(-1.5px, -1.5px); /* Ajustado para que el efecto hover sea sutil */
+    box-shadow: 3.5px 3.5px 0 var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+  }
+</style>

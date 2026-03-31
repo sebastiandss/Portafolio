@@ -1,0 +1,67 @@
+---
+---
+<section id="stack">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="color:var(--yellow)">
+        <div class="eyebrow-dot" style="background:var(--yellow)"></div>
+        03 · Stack
+      </div>
+      <h2 class="section-title">Tecnologías</h2>
+    </div>
+
+    <div class="stack-row reveal">
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(192,132,252,.15);">🫧</div>
+        <span class="scard-name">Bubble.io</span>
+        <p class="scard-desc">Apps no-code con lógica real y flujos de usuario</p>
+        <div class="scard-wobble" style="background:var(--lavender)"></div>
+      </div>
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(255,92,92,.15);">🚀</div>
+        <span class="scard-name">Astro</span>
+        <p class="scard-desc">Sitios estáticos y contenido editorial rápido</p>
+        <div class="scard-wobble" style="background:var(--coral)"></div>
+      </div>
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(61,255,192,.15);">💚</div>
+        <span class="scard-name">Nuxt.js</span>
+        <p class="scard-desc">Frontend SSR conectado a APIs empresariales</p>
+        <div class="scard-wobble" style="background:var(--mint)"></div>
+      </div>
+      <div class="scard">
+        <div class="scard-icon" style="background:rgba(249,229,53,.15);">☕</div>
+        <span class="scard-name">Java</span>
+        <p class="scard-desc">Backend con Spring Boot en proyectos reales</p>
+        <div class="scard-wobble" style="background:var(--yellow)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #stack { background: var(--ink2); padding: 7rem 3rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .stack-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  
+  .scard {
+    background: var(--ink3); border: 2.5px solid rgba(255,255,255,.07);
+    border-radius: 18px; padding: 2rem 1.5rem;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.5); transition: transform .2s, box-shadow .2s;
+    position: relative; overflow: hidden;
+  }
+  .scard:hover { transform: translate(-3px,-3px) rotate(.5deg); box-shadow: 7px 7px 0 rgba(0,0,0,.5); }
+  .scard-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; border: 2.5px solid var(--ink); z-index: 2;
+  }
+  .scard-name { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: var(--white); z-index: 2; }
+  .scard-desc { font-size: .7rem; color: var(--off); line-height: 1.6; font-weight: 600; z-index: 2; }
+  .scard-wobble { position: absolute; bottom: -18px; right: -18px; width: 70px; height: 70px; border-radius: 50%; opacity: .06; }
+
+  @media (max-width: 900px) {
+    .stack-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>

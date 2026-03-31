@@ -1,0 +1,82 @@
+---
+---
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="color:var(--coral)">
+        <div class="eyebrow-dot" style="background:var(--coral)"></div>
+        02 · Trayectoria
+      </div>
+      <h2 class="section-title">Experiencia</h2>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-card-accent" style="background:var(--lavender)"></div>
+        <div class="exp-num">01</div>
+        <p class="exp-period">2025 · Inicio — EBS</p>
+        <p class="exp-role">Desarrollo No-code<br>con Bubble.io</p>
+        <p class="exp-body">Construí aplicaciones web funcionales aprendiendo los fundamentos del desarrollo orientado a producto: flujos de lógica, interfaces y manejo de datos.</p>
+        <div class="exp-tags">
+          <span class="etag" style="background:rgba(192,132,252,.12);color:var(--lavender);border-color:rgba(192,132,252,.25);">Bubble.io</span>
+          <span class="etag" style="background:rgba(192,132,252,.08);color:var(--lavender);border-color:rgba(192,132,252,.15);">No-code</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-accent" style="background:var(--blue)"></div>
+        <div class="exp-num">02</div>
+        <p class="exp-period">2025 — EBS</p>
+        <p class="exp-role">Chatbot WhatsApp<br>· Meta API</p>
+        <p class="exp-body">Integración de un chatbot con la API oficial de Meta — webhooks, flujo de conversación y onboarding en Business Manager.</p>
+        <p class="exp-note-small">Bloqueado por requisitos operacionales externos de Meta.</p>
+        <div class="exp-tags">
+          <span class="etag" style="background:rgba(92,184,255,.12);color:var(--blue);border-color:rgba(92,184,255,.25);">Meta API</span>
+          <span class="etag" style="background:rgba(92,184,255,.08);color:var(--blue);border-color:rgba(92,184,255,.15);">WhatsApp</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-accent" style="background:var(--mint)"></div>
+        <div class="exp-num">03</div>
+        <p class="exp-period">2026 · Hoy — EBS</p>
+        <p class="exp-role">API REST + Frontend<br>Nuxt & Spring Boot</p>
+        <p class="exp-body">Desarrollo fullstack con Spring Boot (Java) y Oracle, con Nuxt.js en el frontend. Proyecto empresarial activo.</p>
+        <div class="exp-tags">
+          <span class="etag" style="background:rgba(61,255,192,.12);color:var(--mint);border-color:rgba(61,255,192,.25);">Nuxt.js</span>
+          <span class="etag" style="background:rgba(61,255,192,.08);color:var(--mint);border-color:rgba(61,255,192,.15);">Java</span>
+          <span class="etag" style="background:rgba(249,229,53,.1);color:var(--yellow);border-color:rgba(249,229,53,.2);">En proceso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #experience { background: var(--ink); padding: 7rem 3rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  
+  .exp-card {
+    background: var(--ink2); border: 2.5px solid rgba(255,255,255,.07);
+    border-radius: 20px; padding: 2rem; position: relative; overflow: hidden;
+    box-shadow: 5px 5px 0 rgba(0,0,0,.6); transition: transform .2s, box-shadow .2s;
+  }
+  .exp-card:hover { transform: translate(-4px, -4px); box-shadow: 9px 9px 0 rgba(0,0,0,.6); }
+  .exp-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  .exp-num {
+    font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 900;
+    line-height: 1; opacity: .08; position: absolute; top: 1.2rem; right: 1.5rem;
+  }
+  .exp-period { font-size: .65rem; font-weight: 800; color: var(--off); margin-bottom: .8rem; text-transform: uppercase; }
+  .exp-role { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: .9rem; line-height: 1.2; }
+  .exp-body { font-size: .8rem; line-height: 1.8; color: var(--off); font-weight: 600; margin-bottom: 1.3rem; }
+  .exp-note-small { font-size: .72rem; font-style: italic; color: rgba(255,255,255,.3); padding-left: .8rem; border-left: 2px solid rgba(255,255,255,.1); margin-bottom: 1.2rem; }
+  .exp-tags { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .etag { font-size: .62rem; font-weight: 800; padding: .22rem .7rem; border-radius: 6px; border: 2px solid transparent; text-transform: uppercase; }
+
+  @media (max-width: 900px) {
+    #experience { padding: 5rem 1.5rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,184 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cur" id="cur"></div>
+  
+  <slot />
+
+  <style is:global>
+    :root {
+      --ink:      #0e0e0e;
+      --ink2:     #1a1a1a;
+      --ink3:     #252525;
+      --yellow:   #f9e535;
+      --coral:    #ff5c5c;
+      --mint:     #3dffc0;
+      --lavender: #c084fc;
+      --blue:     #5cb8ff;
+      --white:    #f7f7f0;
+      --off:      #a8a89e;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--ink);
+      color: var(--white);
+      overflow-x: hidden;
+      cursor: none; /* Escondemos el cursor default */
+    }
+
+    /* CURSOR CUSTOM */
+    .cur {
+      width: 18px;
+      height: 18px;
+      background: var(--yellow);
+      border: 2.5px solid var(--ink);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: width .15s, height .15s, background .2s;
+      transform: translate(-50%, -50%); /* Centrado exacto */
+    }
+
+    .cur.big {
+      width: 42px;
+      height: 42px;
+      background: var(--coral);
+      opacity: .7;
+    }
+
+    /* EFECTO DE RUIDO (Grainy Texture) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.up {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ESTILOS REUTILIZABLES (Botones, Eyebrows) */
+    .btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .8rem 1.8rem;
+      border-radius: 8px;
+      border: 2.5px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+    .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+    .btn-y { background: var(--yellow); color: var(--ink); }
+    .btn-g { background: transparent; color: var(--white); border-color: rgba(255,255,255,.18); }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .eyebrow-dot { width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid var(--ink); flex-shrink: 0; }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 4rem;
+    }
+  </style>
+
+  <script>
+    // Lógica del Cursor
+    const cur = document.getElementById('cur');
+    document.addEventListener('mousemove', e => {
+      if (cur) {
+        cur.style.left = `${e.clientX}px`;
+        cur.style.top = `${e.clientY}px`;
+      }
+    });
+
+    // Expandir cursor en links
+    const links = document.querySelectorAll('a, button, .btn');
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => cur?.classList.add('big'));
+      link.addEventListener('mouseleave', () => cur?.classList.remove('big'));
+    });
+
+    // Intersection Observer para animaciones de entrada
+    const observerOptions = {
+      threshold: 0.08
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Un pequeño delay para que no aparezcan todos al mismo tiempo exacto
+          setTimeout(() => {
+            entry.target.classList.add('up');
+          }, index * 50);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

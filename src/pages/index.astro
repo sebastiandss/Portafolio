@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Ticker from '../components/Ticker.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Stack from '../components/Stack.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Sebastian — Developer">
+  <Navbar />
+
+  <main>
+    <Hero />
+
+    <Ticker />
+
+    <About />
+
+    <Experience />
+
+    <Stack />
+
+    <Projects />
+
+    <Contact />
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 Sebastian — Junior Developer</p>
+      <p>Hecho con <span class="footer-heart">♥</span> en Medellín 🇨🇴</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* Estilos específicos para la estructura de la página principal */
+  main {
+    overflow-x: hidden;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 2.5px solid rgba(255, 255, 255, 0.06);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--ink);
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--off);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-heart {
+    color: var(--coral);
+  }
+
+  /* Responsive para el footer */
+  @media (max-width: 900px) {
+    footer {
+      padding: 2rem 1.5rem;
+    }
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+---
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="color:var(--coral)">
+        <div class="eyebrow-dot" style="background:var(--coral)"></div>
+        05 · Contacto
+      </div>
+      <h2 class="section-title">¿Hablamos?</h2>
+    </div>
+    
+    <div class="contact-inner reveal">
+      <div class="contact-deco"></div>
+      <p>Estoy abierto a <b>nuevas oportunidades</b>, proyectos freelance o simplemente a conectar con gente del mundo del software. No dudes en escribirme.</p>
+      <div class="contact-links">
+        <a href="mailto:tu@email.com" class="btn btn-y">✉ Email</a>
+        <a href="https://linkedin.com/in/tu-usuario" class="btn btn-g" target="_blank">↗ LinkedIn</a>
+        <a href="https://github.com/tu-usuario" class="btn btn-g" target="_blank">↗ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #contact { background: var(--ink2); padding: 7rem 3rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .contact-inner {
+    max-width: 700px; background: var(--ink2); border: 2.5px solid rgba(255,255,255,.08);
+    border-radius: 24px; padding: 3.5rem; box-shadow: 8px 8px 0 rgba(0,0,0,.6);
+    position: relative; overflow: hidden;
+  }
+  .contact-deco { position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: var(--yellow); opacity: .06; }
+  .contact-inner p { font-size: .92rem; line-height: 1.8; color: var(--off); font-weight: 600; margin-bottom: 2.5rem; max-width: 460px; position: relative; z-index: 2; }
+  .contact-inner p b { color: var(--white); font-weight: 800; }
+  .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 2; }
+
+  @media (max-width: 900px) {
+    #contact { padding: 5rem 1.5rem; }
+    .contact-inner { padding: 2.5rem 1.8rem; }
+  }
+</style>

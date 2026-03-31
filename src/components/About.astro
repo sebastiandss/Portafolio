@@ -1,0 +1,80 @@
+---
+---
+<section id="about">
+  <div class="about-grid reveal">
+    <div class="about-content">
+      <div class="section-eyebrow" style="color:var(--mint)">
+        <div class="eyebrow-dot" style="background:var(--mint)"></div>
+        01 · Sobre mí
+      </div>
+      <h2 class="section-title">Dev pragmático,<br>orientado a producto</h2>
+      <div class="about-text">
+        <p>Soy un developer junior con <b>un año de experiencia</b> en EBS, empresa de desarrollo de software. Trabajo en proyectos reales que van desde apps no-code hasta backends conectados a bases de datos empresariales.</p>
+        <p>Me interesa más <b>entender el problema</b> que acumular tecnologías. Prefiero la practicidad: elegir la herramienta correcta y usarla bien.</p>
+        <p>Cada proyecto en EBS me ha puesto frente a un stack diferente — eso me ha dado una <b>perspectiva amplia</b> para alguien con un año de recorrido.</p>
+      </div>
+    </div>
+
+    <div class="cards-row">
+      <div class="acard">
+        <div class="acard-icon" style="background:rgba(249,229,53,.12);">🏢</div>
+        <div class="acard-body">
+          <strong>EBS</strong>
+          <span>Empresa de desarrollo de software · Bogotá</span>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-icon" style="background:rgba(61,255,192,.12);">📅</div>
+        <div class="acard-body">
+          <strong>1 año de experiencia</strong>
+          <span>Proyectos reales desde 2025</span>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-icon" style="background:rgba(92,184,255,.12);">🎯</div>
+        <div class="acard-body">
+          <strong>3 proyectos distintos</strong>
+          <span>No-code · Chatbot · API REST fullstack</span>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-icon" style="background:rgba(255,92,92,.12);">📍</div>
+        <div class="acard-body">
+          <strong>Medellín, Colombia</strong>
+          <span>Disponible para trabajo remoto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #about { background: var(--ink2); padding: 7rem 3rem; }
+  .about-grid { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; 
+    align-items: center; max-width: 1100px; margin: 0 auto; 
+  }
+  .about-text p { font-size: .95rem; line-height: 1.85; color: var(--off); margin-bottom: 1.1rem; font-weight: 600; }
+  .about-text p b { color: var(--white); font-weight: 800; }
+  
+  .cards-row { display: flex; flex-direction: column; gap: 1.2rem; }
+  .acard {
+    background: var(--ink3); border: 2.5px solid rgba(255,255,255,.07);
+    border-radius: 16px; padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; gap: 1.4rem;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.5); transition: transform .2s, box-shadow .2s;
+  }
+  .acard:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 rgba(0,0,0,.5); }
+  .acard-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0; border: 2.5px solid var(--ink);
+  }
+  .acard-body strong { display: block; font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: .2rem; }
+  .acard-body span { font-size: .78rem; color: var(--off); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    #about { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
